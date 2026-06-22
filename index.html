@@ -285,11 +285,34 @@
             text-align: center; max-width: 720px; margin: 0 auto 40px;
             font-size: 1.05rem; opacity: 0.9;
         }
+        .about-centered { max-width: 860px; margin: 0 auto; text-align: center; }
+        .about-centered .about-text p { text-align: center; }
+        .logo-banner-wide {
+            display: block;
+            max-width: 420px;
+            width: 100%;
+            margin: 0 auto 28px;
+            height: auto;
+        }
+        .why-logo {
+            display: block;
+            max-width: 160px;
+            width: 100%;
+            margin: 0 0 20px;
+            height: auto;
+        }
+        .why-contact {
+            margin-top: 28px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .why-contact a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        .why-contact a:hover { text-decoration: underline; }
+        .about-image { width: 100%; border-radius: 6px; display: block; box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+        .about-text p { font-size: 1.05rem; line-height: 1.75; margin: 0 0 20px; }
         .about-grid {
             display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center;
         }
-        .about-text p { font-size: 1.05rem; line-height: 1.75; margin: 0 0 20px; }
-        .about-image { width: 100%; border-radius: 6px; display: block; box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
         .logo-banner { display: block; max-width: 280px; margin: 0 auto 28px; width: 100%; height: auto; }
         .services-banner-wrap {
             margin: 0 auto;
@@ -373,7 +396,7 @@
         .why-list { list-style: none; padding: 0; margin: 24px 0 0; }
         .why-list li {
             padding: 14px 0 14px 28px; position: relative;
-            border-bottom: 1px solid rgba(48,48,48,0.12); font-size: 1.05rem;
+            border-bottom: 1px solid rgba(248,246,241,0.12); font-size: 1.05rem;
         }
         .why-list li::before {
             content: ''; position: absolute; left: 0; top: 22px;
@@ -508,7 +531,7 @@
         <section class="split-contact" id="contact">
             <div class="split-panel">
                 <h2>Get In Touch</h2>
-                <p class="sub">Serving north Houston through Magnolia and Conroe</p>
+                <p class="sub">Providing service to the great Houston area — including Magnolia and Conroe</p>
                 <div class="contact-block">
                     <p><strong>Main Office</strong></p>
                     <p>256 Ed English Dr, Bldg 4 Ste E<br>Shenandoah, Texas 77385</p>
@@ -523,17 +546,14 @@
         </section>
 
         <section id="about" class="section-cream">
-            <div class="container">
-                <img class="logo-banner" src="/assets/images/logo.jpg" alt="Anderhaus Construction" width="280" height="178" loading="lazy">
+            <div class="container about-centered">
+                <img class="logo-banner" src="/assets/images/logo.jpg" alt="Anderhaus Construction" width="200" height="127" loading="lazy">
+                <img class="logo-banner-wide" src="/assets/images/logo-banner.jpg" alt="" width="420" height="100" aria-hidden="true" loading="lazy">
                 <h2 class="section-title brand-serif">Who We Are</h2>
-                <p class="section-subtitle brand-serif">We build homes or make your home a better place</p>
-                <div class="about-grid">
-                    <div class="about-text">
-                        <p>Where love resides and memories are created. Each brick carefully laid, each room thoughtfully designed, each corner filled with warmth and comfort. Our homes are more than just walls and a roof; they are havens of peace, shelters from the storm, and the foundation of our lives.</p>
-                        <p>In these spaces, laughter echoes, tears are wiped away, and dreams take flight. We build homes where families grow, friendships deepen, and love blossoms. Each home we create is a reflection of the beauty and joy that dwell within us, a sanctuary where we can truly be ourselves. Together, we build not just structures, but sanctuaries of the heart.</p>
-                    </div>
-                    <img class="about-image" src="/assets/images/about-team.jpg" alt="Anderhaus Construction residential build project in Greater Houston" width="800" height="534" loading="lazy">
+                <div class="about-text">
+                    <p>Where love resides and memories are created. Each brick carefully laid, each room thoughtfully designed, each corner filled with warmth and comfort. Our homes are more than just walls and a roof; they are havens of peace, shelters from the storm, and the foundation of our lives. In these spaces, laughter echoes, tears are wiped away, and dreams take flight. We build homes where families grow, friendships deepen, and love blossoms. Each home we create is a reflection of the beauty and joy that dwell within us, a sanctuary where we can truly be ourselves. Together, we build not just structures, but sanctuaries of the heart.</p>
                 </div>
+                <p class="section-subtitle brand-serif" style="margin-bottom:0;">We build homes or make your home a better place</p>
             </div>
         </section>
 
@@ -553,7 +573,7 @@
                         <div class="treatment-content">
                             <div class="treatment-label">New</div>
                             <h3 class="brand-serif">Modern Family Home</h3>
-                            <p>Built just for your family.</p>
+                            <p>Built just for your family</p>
                         </div>
                     </article>
                     <article class="card-treatment">
@@ -561,9 +581,9 @@
                             <img src="/assets/images/service-materials.png" alt="Best quality construction materials" width="426" height="283" loading="lazy">
                         </div>
                         <div class="treatment-content">
-                            <div class="treatment-label">Quality</div>
+                            <div class="treatment-label">Built just for your family</div>
                             <h3 class="brand-serif">Best Quality in Materials</h3>
-                            <p>We care about the details.</p>
+                            <p>We care about the details</p>
                         </div>
                     </article>
                     <article class="card-treatment">
@@ -571,9 +591,9 @@
                             <img src="/assets/images/service-details.png" alt="Kitchen remodeling supervised by Anderhaus Construction" width="426" height="283" loading="lazy">
                         </div>
                         <div class="treatment-content">
-                            <div class="treatment-label">Supervision</div>
+                            <div class="treatment-label">We care on the details</div>
                             <h3 class="brand-serif">We Supervise Every Detail</h3>
-                            <p>From roof to kitchen and bathroom — our team oversees each phase of your build or remodel.</p>
+                            <p>We supervise every detail</p>
                         </div>
                     </article>
                 </div>
@@ -591,18 +611,23 @@
             </div>
         </section>
 
-        <section class="section-cream">
+        <section id="why-choose" class="section-dark">
             <div class="container why-grid">
                 <div>
+                    <img class="why-logo" src="/assets/images/logo.jpg" alt="" width="160" height="102" aria-hidden="true" loading="lazy">
                     <h2 class="section-title brand-serif" style="text-align:left;margin-bottom:16px;">Why Choose Us?</h2>
-                    <p>We are a housing development and remodeling company in the north of Houston. We locate, select land, and build single-family homes. We can build on your existing lot or remodel your roof, bathroom, kitchen, or complete home.</p>
-                    <ul class="why-list" style="color:var(--charcoal);">
+                    <p>We are a housing development and remodeling company in the north of Houston. We locate, select land, and build single-family homes. We can build on your existing lot or remodel from your roof, bathroom, kitchen, or your complete home!</p>
+                    <ul class="why-list">
                         <li>Years of experience building and remodeling.</li>
                         <li>We have a dedicated team with the expertise and skills.</li>
                         <li>We have a solid network of resources in the industry.</li>
                     </ul>
+                    <p class="why-contact">
+                        Tel: <a href="tel:+17135913379">(713) 591-3379</a><br>
+                        Email: <a href="mailto:hello@anderhouseconstruction.com">hello@anderhouseconstruction.com</a>
+                    </p>
                 </div>
-                <img class="about-image" src="/assets/images/service-new-home.png" alt="Anderhaus Construction custom home exterior in north Houston" width="426" height="283" loading="lazy">
+                <img class="about-image" src="/assets/images/about-team.jpg" alt="Anderhaus Construction residential build site in north Houston" width="800" height="534" loading="lazy">
             </div>
         </section>
 
