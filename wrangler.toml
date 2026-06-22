@@ -2,14 +2,15 @@ name = "anderhausconstruction"
 compatibility_date = "2026-06-22"
 compatibility_flags = ["nodejs_compat"]
 workers_dev = true
+account_id = "a0d6591fc135a7069b2487a1f5fd5aa7"
 
 [assets]
 directory = "."
 
 [[routes]]
-pattern = "anderhausconstruction.com/*"
-zone_name = "anderhausconstruction.com"
+pattern = "anderhausconstruction.com"
+custom_domain = true
 
 [[routes]]
-pattern = "www.anderhausconstruction.com/*"
-zone_name = "anderhausconstruction.com"
+pattern = "www.anderhausconstruction.com"
+custom_domain = true
