@@ -59,7 +59,9 @@
           "image": [
             "https://anderhausconstruction.com/assets/images/about-team.jpg",
             "https://anderhausconstruction.com/assets/images/our-services.png",
-            "https://anderhausconstruction.com/assets/images/service-new-home.png"
+            "https://anderhausconstruction.com/assets/images/modern-open-concept-kitchen-living-room-houston.jpg",
+            "https://anderhausconstruction.com/assets/images/white-kitchen-remodel-shaker-cabinets-houston.jpg",
+            "https://anderhausconstruction.com/assets/images/home-addition-composite-deck-wire-railing.jpg"
           ],
           "description": "Housing development and remodeling company serving north Houston through Magnolia and Conroe. New single-family homes, remodeling from kitchen and bathroom to roofing and whole-home projects.",
           "telephone": "+1-713-591-3379",
@@ -302,12 +304,65 @@
             height: auto;
             display: block;
         }
-        .grid-treatments {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
+        .portfolio-carousel {
+            position: relative;
             margin-top: 40px;
         }
+        .carousel-viewport {
+            overflow: hidden;
+            margin: 0 48px;
+        }
+        .carousel-track {
+            display: flex;
+            gap: 28px;
+            transition: transform 0.45s ease;
+            will-change: transform;
+        }
+        .carousel-slide {
+            flex: 0 0 calc((100% - 56px) / 3);
+            min-width: 0;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 42%;
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 42px;
+            height: 42px;
+            border: none;
+            border-radius: 50%;
+            background: var(--charcoal);
+            color: var(--cream);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+            transition: background 0.2s, color 0.2s;
+        }
+        .carousel-btn:hover:not(:disabled) { background: var(--accent); color: var(--charcoal); }
+        .carousel-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+        .carousel-btn.prev { left: 0; }
+        .carousel-btn.next { right: 0; }
+        .carousel-btn svg { width: 20px; height: 20px; fill: currentColor; }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: none;
+            padding: 0;
+            background: rgba(48,48,48,0.25);
+            cursor: pointer;
+        }
+        .carousel-dot.is-active { background: var(--accent); }
+        .carousel-dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
         .card-treatment {
             background: #ffffff;
             border-radius: 8px;
@@ -319,17 +374,13 @@
         .card-treatment:hover { transform: translateY(-4px); }
         .card-treatment-media {
             background: var(--charcoal);
-            padding: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 220px;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
         }
         .card-treatment-media img {
             width: 100%;
-            height: auto;
-            max-height: 190px;
-            object-fit: contain;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
         .treatment-content { padding: 24px; color: var(--charcoal); }
@@ -442,11 +493,16 @@
         .phone-floating:hover { transform: scale(1.08); background-color: var(--accent-hover); }
         .phone-floating svg { width: 28px; height: 28px; fill: currentColor; }
         @media (max-width: 900px) {
-            .split-contact, .about-grid, .why-grid, .grid-treatments, .footer-columns { grid-template-columns: 1fr; }
+            .split-contact, .about-grid, .why-grid, .footer-columns { grid-template-columns: 1fr; }
+            .carousel-slide { flex: 0 0 calc((100% - 28px) / 2); }
             .split-panel.right { border-left: none; border-top: 1px solid rgba(248,246,241,0.15); }
             body { padding-top: 88px; }
             .nav-container { row-gap: 12px; }
             .nav-menu { width: 100%; justify-content: center; }
+        }
+        @media (max-width: 600px) {
+            .carousel-viewport { margin: 0 40px; }
+            .carousel-slide { flex: 0 0 100%; }
         }
         @media (max-width: 768px) {
             .hero { min-height: 380px; padding: 40px 16px 56px; }
@@ -531,37 +587,98 @@
                     <img src="/assets/images/our-services.png" alt="Our Services: Kitchen Remodeling, Bathroom Remodeling, Flooring Installation, Make-Ready Services, Residential Improvements, New Home Construction" width="1024" height="242" loading="lazy">
                 </figure>
 
-                <div class="grid-treatments">
-                    <article class="card-treatment">
-                        <div class="card-treatment-media">
-                            <img src="/assets/images/service-new-home.png" alt="Modern family home built by Anderhaus Construction" width="426" height="283" loading="lazy">
+                <div class="portfolio-carousel" aria-roledescription="carousel" aria-label="Our work — quality construction and customer service">
+                    <button type="button" class="carousel-btn prev" aria-label="Previous projects">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    </button>
+                    <div class="carousel-viewport">
+                        <div class="carousel-track">
+                            <article class="card-treatment carousel-slide">
+                                <div class="card-treatment-media">
+                                    <img src="/assets/images/service-new-home.png" alt="Modern family home built by Anderhaus Construction in Greater Houston" width="426" height="283" loading="lazy">
+                                </div>
+                                <div class="treatment-content">
+                                    <div class="treatment-label">New Construction</div>
+                                    <h3 class="brand-serif">Modern Family Home</h3>
+                                    <p>Built just for your family — with the care, communication, and quality you deserve from start to finish.</p>
+                                </div>
+                            </article>
+                            <article class="card-treatment carousel-slide">
+                                <div class="card-treatment-media">
+                                    <img src="/assets/images/service-materials.png" alt="Premium construction materials selected by Anderhaus Construction" width="426" height="283" loading="lazy">
+                                </div>
+                                <div class="treatment-content">
+                                    <div class="treatment-label">Quality First</div>
+                                    <h3 class="brand-serif">Best Quality in Materials</h3>
+                                    <p>We source durable, trusted materials because your home deserves nothing less than lasting craftsmanship.</p>
+                                </div>
+                            </article>
+                            <article class="card-treatment carousel-slide">
+                                <div class="card-treatment-media">
+                                    <img src="/assets/images/service-details.png" alt="Kitchen remodeling supervised by Anderhaus Construction" width="426" height="283" loading="lazy">
+                                </div>
+                                <div class="treatment-content">
+                                    <div class="treatment-label">Attention to Detail</div>
+                                    <h3 class="brand-serif">We Supervise Every Detail</h3>
+                                    <p>Our team stays hands-on through every phase so your project is completed right — on time and to your standards.</p>
+                                </div>
+                            </article>
+                            <article class="card-treatment carousel-slide">
+                                <div class="card-treatment-media">
+                                    <img src="/assets/images/modern-open-concept-kitchen-living-room-houston.jpg" alt="Modern open-concept kitchen and living room with wood accent wall and fireplace by Anderhaus Construction" width="1024" height="683" loading="lazy">
+                                </div>
+                                <div class="treatment-content">
+                                    <div class="treatment-label">Craftsmanship</div>
+                                    <h3 class="brand-serif">Crafting Your Dream Space</h3>
+                                    <p>From high-end kitchen finishes to stunning architectural features, we prioritize quality in every detail and a seamless experience.</p>
+                                </div>
+                            </article>
+                            <article class="card-treatment carousel-slide">
+                                <div class="card-treatment-media">
+                                    <img src="/assets/images/white-kitchen-remodel-shaker-cabinets-houston.jpg" alt="White kitchen remodel with shaker cabinets and quartz countertops in Houston area" width="1024" height="768" loading="lazy">
+                                </div>
+                                <div class="treatment-content">
+                                    <div class="treatment-label">Kitchen Remodeling</div>
+                                    <h3 class="brand-serif">The Heart of Your Home, Redefined</h3>
+                                    <p>Timeless style meets modern functionality. We combine premium materials with expert craftsmanship you can trust.</p>
+                                </div>
+                            </article>
+                            <article class="card-treatment carousel-slide">
+                                <div class="card-treatment-media">
+                                    <img src="/assets/images/basement-wet-bar-remodel-navy-cabinets.jpg" alt="Basement wet bar remodel with custom navy cabinets and luxury finishes" width="1024" height="768" loading="lazy">
+                                </div>
+                                <div class="treatment-content">
+                                    <div class="treatment-label">Finished With Excellence</div>
+                                    <h3 class="brand-serif">Uncompromising Quality</h3>
+                                    <p>From custom cabinetry to luxury finishes, we transform your space into a room your family will enjoy for years to come.</p>
+                                </div>
+                            </article>
+                            <article class="card-treatment carousel-slide">
+                                <div class="card-treatment-media">
+                                    <img src="/assets/images/home-addition-composite-deck-wire-railing.jpg" alt="Home addition with composite deck and modern wire railing built by Anderhaus Construction" width="1024" height="1024" loading="lazy">
+                                </div>
+                                <div class="treatment-content">
+                                    <div class="treatment-label">Home Additions</div>
+                                    <h3 class="brand-serif">Expanding Your Home with Care</h3>
+                                    <p>Custom additions and outdoor living built with premium materials — professional weatherproofing and modern finishes throughout.</p>
+                                </div>
+                            </article>
+                            <article class="card-treatment carousel-slide">
+                                <div class="card-treatment-media">
+                                    <img src="/assets/images/home-addition-construction-framing-tyvek.jpg" alt="Professional home addition construction with structural framing and Tyvek weatherproofing" width="1024" height="1024" loading="lazy">
+                                </div>
+                                <div class="treatment-content">
+                                    <div class="treatment-label">Built to Last</div>
+                                    <h3 class="brand-serif">Quality You Can Trust</h3>
+                                    <p>From the first frame to the final touch, we prioritize structural integrity and customer satisfaction on every project.</p>
+                                </div>
+                            </article>
                         </div>
-                        <div class="treatment-content">
-                            <div class="treatment-label">New</div>
-                            <h3 class="brand-serif">Modern Family Home</h3>
-                            <p>Built just for your family</p>
-                        </div>
-                    </article>
-                    <article class="card-treatment">
-                        <div class="card-treatment-media">
-                            <img src="/assets/images/service-materials.png" alt="Best quality construction materials" width="426" height="283" loading="lazy">
-                        </div>
-                        <div class="treatment-content">
-                            <div class="treatment-label">Built just for your family</div>
-                            <h3 class="brand-serif">Best Quality in Materials</h3>
-                            <p>We care about the details</p>
-                        </div>
-                    </article>
-                    <article class="card-treatment">
-                        <div class="card-treatment-media">
-                            <img src="/assets/images/service-details.png" alt="Kitchen remodeling supervised by Anderhaus Construction" width="426" height="283" loading="lazy">
-                        </div>
-                        <div class="treatment-content">
-                            <div class="treatment-label">We care on the details</div>
-                            <h3 class="brand-serif">We Supervise Every Detail</h3>
-                            <p>We supervise every detail</p>
-                        </div>
-                    </article>
+                    </div>
+                    <button type="button" class="carousel-btn next" aria-label="Next projects">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+                    </button>
+                    <div class="carousel-dots" role="tablist" aria-label="Project gallery pages"></div>
                 </div>
 
                 <ul class="services-sr-list" aria-label="Services offered">
@@ -667,5 +784,84 @@
     <a href="tel:+17135913379" class="phone-floating" aria-label="Call Anderhaus Construction">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V21a1 1 0 01-1 1C10.07 22 2 13.93 2 3a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
     </a>
+
+    <script>
+    (function () {
+        var carousel = document.querySelector('.portfolio-carousel');
+        if (!carousel) return;
+        var track = carousel.querySelector('.carousel-track');
+        var slides = carousel.querySelectorAll('.carousel-slide');
+        var prevBtn = carousel.querySelector('.carousel-btn.prev');
+        var nextBtn = carousel.querySelector('.carousel-btn.next');
+        var dotsContainer = carousel.querySelector('.carousel-dots');
+        var index = 0;
+        var perView = 3;
+
+        function getPerView() {
+            if (window.matchMedia('(max-width: 600px)').matches) return 1;
+            if (window.matchMedia('(max-width: 900px)').matches) return 2;
+            return 3;
+        }
+
+        function maxIndex() {
+            return Math.max(0, slides.length - perView);
+        }
+
+        function buildDots() {
+            dotsContainer.innerHTML = '';
+            var pages = maxIndex() + 1;
+            for (var i = 0; i < pages; i++) {
+                var dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'carousel-dot' + (i === index ? ' is-active' : '');
+                dot.setAttribute('role', 'tab');
+                dot.setAttribute('aria-label', 'Show projects ' + (i + 1));
+                dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
+                dot.dataset.index = String(i);
+                dot.addEventListener('click', function () {
+                    index = parseInt(this.dataset.index, 10);
+                    update();
+                });
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function update() {
+            perView = getPerView();
+            if (index > maxIndex()) index = maxIndex();
+            var slide = slides[0];
+            if (!slide) return;
+            var gap = 28;
+            var offset = index * (slide.offsetWidth + gap);
+            track.style.transform = 'translateX(-' + offset + 'px)';
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index >= maxIndex();
+            dotsContainer.querySelectorAll('.carousel-dot').forEach(function (dot, i) {
+                var active = i === index;
+                dot.classList.toggle('is-active', active);
+                dot.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+        }
+
+        prevBtn.addEventListener('click', function () {
+            if (index > 0) { index--; update(); }
+        });
+        nextBtn.addEventListener('click', function () {
+            if (index < maxIndex()) { index++; update(); }
+        });
+
+        var resizeTimer;
+        window.addEventListener('resize', function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                buildDots();
+                update();
+            }, 120);
+        });
+
+        buildDots();
+        update();
+    })();
+    </script>
 </body>
 </html>
