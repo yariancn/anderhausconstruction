@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Anderhaus Construction | Home Builder & Remodeling | North Houston to Magnolia & Conroe</title>
-    <meta name="description" content="Anderhaus Construction LLC — new single-family homes and remodeling from kitchen, bathroom, and roofing to whole-home projects. Serving north Houston, Shenandoah, The Woodlands, Spring, Tomball, Magnolia, and Conroe, TX. Call (713) 591-3379.">
+    <meta name="description" content="Anderhaus Construction LLC — new single-family homes and remodeling from kitchen, bathroom, and roofing to whole-home projects. Serving north Houston, Shenandoah, The Woodlands, Spring, Tomball, Magnolia, and Conroe, TX. Text (713) 591-3379 for a free consultation.">
     <meta name="keywords" content="home builder north Houston, custom home builder Magnolia TX, home remodeling Conroe TX, Anderhaus Construction, kitchen remodel The Woodlands, bathroom remodel Shenandoah, roofing Spring TX, new construction Tomball, whole home remodeling Greater Houston">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://anderhausconstruction.com/">
+    <meta name="author" content="Anderhaus Construction LLC">
+    <meta name="theme-color" content="#303030">
 
     <meta name="geo.region" content="US-TX">
     <meta name="geo.placename" content="Shenandoah">
@@ -18,14 +20,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://anderhausconstruction.com/">
     <meta property="og:title" content="Anderhaus Construction | Building a Home for You">
-    <meta property="og:description" content="New single-family homes and remodeling from kitchen, bathroom, and roofing to whole-home projects. North Houston through Magnolia and Conroe.">
+    <meta property="og:description" content="New single-family homes and remodeling from kitchen, bathroom, and roofing to whole-home projects. North Houston through Magnolia and Conroe. Text us at (713) 591-3379.">
     <meta property="og:image" content="https://anderhausconstruction.com/assets/images/about-team.jpg">
     <meta property="og:image:alt" content="Anderhaus Construction team at a residential build site in Greater Houston">
     <meta name="twitter:image" content="https://anderhausconstruction.com/assets/images/about-team.jpg">
     <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Anderhaus Construction | Building a Home for You">
-    <meta name="twitter:description" content="Home builder and remodeling from north Houston to Magnolia and Conroe — kitchens, bathrooms, roofing, and whole-home projects.">
+    <meta name="twitter:description" content="Home builder and remodeling from north Houston to Magnolia and Conroe. Text (713) 591-3379 or email for a consultation.">
 
     <link rel="alternate" type="text/plain" href="/llms.txt" title="Site information for AI systems">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
@@ -66,6 +68,35 @@
           "description": "Housing development and remodeling company serving north Houston through Magnolia and Conroe. New single-family homes, remodeling from kitchen and bathroom to roofing and whole-home projects.",
           "telephone": "+1-713-591-3379",
           "email": "hello@anderhouseconstruction.com",
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "telephone": "+1-713-591-3379",
+              "contactType": "customer service",
+              "contactOption": "https://schema.org/TextMessage",
+              "areaServed": "US",
+              "availableLanguage": ["en", "es"]
+            },
+            {
+              "@type": "ContactPoint",
+              "email": "hello@anderhouseconstruction.com",
+              "contactType": "customer service",
+              "areaServed": "US",
+              "availableLanguage": ["en", "es"]
+            }
+          ],
+          "potentialAction": {
+            "@type": "CommunicateAction",
+            "name": "Text Anderhaus Construction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "sms:+17135913379",
+              "actionPlatform": [
+                "http://schema.org/DesktopWebPlatform",
+                "http://schema.org/MobileWebPlatform"
+              ]
+            }
+          },
           "priceRange": "$$$",
           "address": {
             "@type": "PostalAddress",
@@ -134,7 +165,15 @@
               "name": "How do I contact Anderhaus Construction?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Call (713) 591-3379 or email hello@anderhouseconstruction.com. Our main office is at 256 Ed English Dr, Bldg 4 Ste E, Shenandoah, Texas."
+                "text": "Text (713) 591-3379 or email hello@anderhouseconstruction.com. Our main office is at 256 Ed English Dr, Bldg 4 Ste E, Shenandoah, Texas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Anderhaus Construction work within my budget?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. We work with you to make the best plan within your budget for new home construction, remodeling, kitchens, bathrooms, roofing, and whole-home projects."
               }
             }
           ]
@@ -268,6 +307,11 @@
         .contact-block p { margin: 8px 0; font-size: 1.05rem; }
         .contact-block a { color: var(--accent); text-decoration: none; font-weight: 600; }
         .contact-block a:hover { text-decoration: underline; }
+        .contact-hint {
+            font-size: 0.88rem;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
         .section-cream {
             background-color: var(--cream); color: var(--charcoal); padding: 72px 0;
         }
@@ -493,7 +537,7 @@
         .footer-col a:hover { color: var(--accent); }
         .footer-legal { text-align: center; font-size: 0.85rem; color: #b0b0b0; padding: 14px 20px 24px; }
         .footer-legal a { color: var(--accent); text-decoration: none; }
-        .phone-floating {
+        .sms-floating {
             position: fixed; bottom: 24px; right: 24px;
             background-color: var(--accent); color: var(--charcoal);
             width: 58px; height: 58px; border-radius: 50%;
@@ -501,8 +545,8 @@
             box-shadow: 0 4px 18px rgba(0,0,0,0.35); z-index: 99999;
             text-decoration: none; transition: transform 0.2s, background-color 0.2s;
         }
-        .phone-floating:hover { transform: scale(1.08); background-color: var(--accent-hover); }
-        .phone-floating svg { width: 28px; height: 28px; fill: currentColor; }
+        .sms-floating:hover { transform: scale(1.08); background-color: var(--accent-hover); }
+        .sms-floating svg { width: 28px; height: 28px; fill: currentColor; }
         @media (max-width: 900px) {
             .split-contact, .about-grid, .why-grid, .footer-columns { grid-template-columns: 1fr; }
             .carousel-slide { flex: 0 0 calc((100% - 28px) / 2); }
@@ -520,7 +564,7 @@
             .hero-video { display: none; }
             .hero-overlay { background: var(--charcoal); }
             .split-panel { padding: 40px 24px; }
-            .phone-floating { bottom: 18px; right: 18px; width: 52px; height: 52px; }
+            .sms-floating { bottom: 18px; right: 18px; width: 52px; height: 52px; }
         }
     </style>
 </head>
@@ -534,7 +578,7 @@
                     <li><a class="nav-link" href="#services">Our Services</a></li>
                     <li><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
-                <a class="btn-contact-nav" href="tel:+17135913379">Call Us</a>
+                <a class="btn-contact-nav" href="sms:+17135913379?body=Hello%2C%20I%27d%20like%20to%20inquire%20about%20a%20home%20build%20or%20remodel%20with%20Anderhaus%20Construction.">Text Us</a>
             </div>
         </nav>
     </header>
@@ -554,7 +598,7 @@
                 <h1>Building a Home for You</h1>
                 <p class="hero-tagline">North Houston · The Woodlands · Magnolia · Conroe &amp; Greater Houston</p>
                 <div class="hero-buttons">
-                    <a href="tel:+17135913379" class="cta-button cta-primary">(713) 591-3379</a>
+                    <a href="sms:+17135913379?body=Hello%2C%20I%27d%20like%20to%20inquire%20about%20a%20home%20build%20or%20remodel%20with%20Anderhaus%20Construction." class="cta-button cta-primary" aria-label="Send a text message to Anderhaus Construction at (713) 591-3379">Text (713) 591-3379</a>
                     <a href="mailto:hello@anderhouseconstruction.com" class="cta-button cta-secondary">Get In Touch</a>
                 </div>
             </div>
@@ -569,7 +613,8 @@
                 <div class="contact-block">
                     <p><strong>Main Office</strong></p>
                     <p>256 Ed English Dr, Bldg 4 Ste E<br>Shenandoah, Texas 77385</p>
-                    <p>Tel: <a href="tel:+17135913379">(713) 591-3379</a></p>
+                    <p>Text: <a href="sms:+17135913379?body=Hello%2C%20I%27d%20like%20to%20inquire%20about%20a%20home%20build%20or%20remodel%20with%20Anderhaus%20Construction." aria-label="Send a text message to (713) 591-3379">(713) 591-3379</a></p>
+                    <p class="contact-hint">Tap the number to open your messaging app.</p>
                     <p>Email: <a href="mailto:hello@anderhouseconstruction.com">hello@anderhouseconstruction.com</a></p>
                 </div>
             </div>
@@ -718,7 +763,7 @@
                         <li>We have a solid network of resources in the industry.</li>
                     </ul>
                     <p class="why-contact">
-                        Tel: <a href="tel:+17135913379">(713) 591-3379</a><br>
+                        Text: <a href="sms:+17135913379?body=Hello%2C%20I%27d%20like%20to%20inquire%20about%20a%20home%20build%20or%20remodel%20with%20Anderhaus%20Construction." aria-label="Send a text message to (713) 591-3379">(713) 591-3379</a><br>
                         Email: <a href="mailto:hello@anderhouseconstruction.com">hello@anderhouseconstruction.com</a>
                     </p>
                 </div>
@@ -731,7 +776,7 @@
                 <div class="geo-box">
                     <h2 class="brand-serif">Our Office</h2>
                     <p>256 Ed English Dr, Bldg 4 Ste E<br>Shenandoah, Texas 77385</p>
-                    <p>Tel: <a href="tel:+17135913379" style="color:var(--charcoal);font-weight:700;">(713) 591-3379</a><br>
+                    <p>Text: <a href="sms:+17135913379?body=Hello%2C%20I%27d%20like%20to%20inquire%20about%20a%20home%20build%20or%20remodel%20with%20Anderhaus%20Construction." style="color:var(--charcoal);font-weight:700;" aria-label="Send a text message to (713) 591-3379">(713) 591-3379</a><br>
                     Email: <a href="mailto:hello@anderhouseconstruction.com" style="color:var(--charcoal);font-weight:700;">hello@anderhouseconstruction.com</a></p>
                     <div class="maps-flex">
                         <a class="btn-map" href="https://www.google.com/maps/search/?api=1&query=256+Ed+English+Dr+Shenandoah+TX+77385" target="_blank" rel="noopener">Google Maps</a>
@@ -766,7 +811,11 @@
                     </div>
                     <div class="faq-item">
                         <h3>How do I request a consultation?</h3>
-                        <p>Call <a href="tel:+17135913379" style="color:var(--accent);">(713) 591-3379</a> or email <a href="mailto:hello@anderhouseconstruction.com" style="color:var(--accent);">hello@anderhouseconstruction.com</a>.</p>
+                        <p>Text <a href="sms:+17135913379?body=Hello%2C%20I%27d%20like%20to%20inquire%20about%20a%20home%20build%20or%20remodel%20with%20Anderhaus%20Construction." style="color:var(--accent);" aria-label="Send a text message to (713) 591-3379">(713) 591-3379</a> or email <a href="mailto:hello@anderhouseconstruction.com" style="color:var(--accent);">hello@anderhouseconstruction.com</a>.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do you work within my budget?</h3>
+                        <p>Yes — we work with you to make the best plan within your budget for new builds, remodeling, kitchens, bathrooms, roofing, and whole-home projects.</p>
                     </div>
                 </section>
             </div>
@@ -786,15 +835,15 @@
             </div>
             <div class="footer-col">
                 <h4>Contact</h4>
-                <p>Phone: <a href="tel:+17135913379">(713) 591-3379</a></p>
+                <p>Text: <a href="sms:+17135913379?body=Hello%2C%20I%27d%20like%20to%20inquire%20about%20a%20home%20build%20or%20remodel%20with%20Anderhaus%20Construction." aria-label="Send a text message to (713) 591-3379">(713) 591-3379</a></p>
                 <p>Email: <a href="mailto:hello@anderhouseconstruction.com">hello@anderhouseconstruction.com</a></p>
             </div>
         </div>
         <p class="footer-legal"><a href="/privacy-policy/">Privacy Policy</a></p>
     </footer>
 
-    <a href="tel:+17135913379" class="phone-floating" aria-label="Call Anderhaus Construction">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V21a1 1 0 01-1 1C10.07 22 2 13.93 2 3a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+    <a href="sms:+17135913379?body=Hello%2C%20I%27d%20like%20to%20inquire%20about%20a%20home%20build%20or%20remodel%20with%20Anderhaus%20Construction." class="sms-floating" aria-label="Send a text message to Anderhaus Construction">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
     </a>
 
     <script>

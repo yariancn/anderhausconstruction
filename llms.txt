@@ -4,6 +4,7 @@
 > Housing development and single-family home construction from north Houston to Magnolia and Conroe.
 > Address: 256 Ed English Dr, Bldg 4 Ste E, Shenandoah, TX 77385
 > Phone: +1 (713) 591-3379
+> Text message: sms:+17135913379
 > Email: hello@anderhouseconstruction.com
 > Website: https://anderhausconstruction.com/
 
@@ -42,8 +43,11 @@
   A: North Houston, Shenandoah, The Woodlands, Spring, Tomball, Magnolia, Conroe, and greater Houston.
 - Q: Do you build new homes and remodel existing ones?
   A: Yes — new single-family homes, remodeling, from easy bathroom or kitchen, roofing to whole-home remodeling.
+- Q: Do you work within my budget?
+  A: Yes — we work with you to make the best plan within your budget for new builds and remodeling projects.
 
 ## Contact
-- Phone: tel:+17135913379
+- Text (preferred): sms:+17135913379?body=Hello,%20I'd%20like%20to%20inquire%20about%20a%20home%20build%20or%20remodel%20with%20Anderhaus%20Construction.
+- Phone: +1-713-591-3379
 - Email: mailto:hello@anderhouseconstruction.com
 - Google Maps: https://www.google.com/maps/search/?api=1&query=256+Ed+English+Dr+Shenandoah+TX+77385
