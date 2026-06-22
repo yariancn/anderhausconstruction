@@ -58,7 +58,8 @@
           "logo": "https://anderhausconstruction.com/assets/images/favicon.png",
           "image": [
             "https://anderhausconstruction.com/assets/images/about-team.jpg",
-            "https://anderhausconstruction.com/assets/images/our-services.png"
+            "https://anderhausconstruction.com/assets/images/our-services.png",
+            "https://anderhausconstruction.com/assets/images/service-new-home.png"
           ],
           "description": "Housing development and remodeling company serving north Houston through Magnolia and Conroe. New single-family homes, remodeling from kitchen and bathroom to roofing and whole-home projects.",
           "telephone": "+1-713-591-3379",
@@ -303,6 +304,47 @@
             height: auto;
             display: block;
         }
+        .grid-treatments {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 40px;
+        }
+        .card-treatment {
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid rgba(48,48,48,0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .card-treatment:hover { transform: translateY(-4px); }
+        .card-treatment-media {
+            background: var(--charcoal);
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 220px;
+        }
+        .card-treatment-media img {
+            width: 100%;
+            height: auto;
+            max-height: 190px;
+            object-fit: contain;
+            display: block;
+        }
+        .treatment-content { padding: 24px; color: var(--charcoal); }
+        .treatment-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+        .card-treatment h3 { margin: 0 0 10px; font-size: 1.15rem; color: var(--charcoal); }
+        .card-treatment p { margin: 0; font-size: 0.92rem; line-height: 1.55; }
         .services-sr-list {
             position: absolute;
             width: 1px;
@@ -402,7 +444,7 @@
         .phone-floating:hover { transform: scale(1.08); background-color: var(--accent-hover); }
         .phone-floating svg { width: 28px; height: 28px; fill: currentColor; }
         @media (max-width: 900px) {
-            .split-contact, .about-grid, .why-grid, .footer-columns { grid-template-columns: 1fr; }
+            .split-contact, .about-grid, .why-grid, .grid-treatments, .footer-columns { grid-template-columns: 1fr; }
             .split-panel.right { border-left: none; border-top: 1px solid rgba(248,246,241,0.15); }
             body { padding-top: 100px; }
             .nav-container { row-gap: 12px; }
@@ -482,6 +524,7 @@
 
         <section id="about" class="section-cream">
             <div class="container">
+                <img class="logo-banner" src="/assets/images/logo.jpg" alt="Anderhaus Construction" width="280" height="178" loading="lazy">
                 <h2 class="section-title brand-serif">Who We Are</h2>
                 <p class="section-subtitle brand-serif">We build homes or make your home a better place</p>
                 <div class="about-grid">
@@ -501,6 +544,40 @@
                 <figure class="services-banner-wrap">
                     <img src="/assets/images/our-services.png" alt="Our Services: Kitchen Remodeling, Bathroom Remodeling, Flooring Installation, Make-Ready Services, Residential Improvements, New Home Construction" width="1024" height="242" loading="lazy">
                 </figure>
+
+                <div class="grid-treatments">
+                    <article class="card-treatment">
+                        <div class="card-treatment-media">
+                            <img src="/assets/images/service-new-home.png" alt="Modern family home built by Anderhaus Construction" width="426" height="283" loading="lazy">
+                        </div>
+                        <div class="treatment-content">
+                            <div class="treatment-label">New</div>
+                            <h3 class="brand-serif">Modern Family Home</h3>
+                            <p>Built just for your family.</p>
+                        </div>
+                    </article>
+                    <article class="card-treatment">
+                        <div class="card-treatment-media">
+                            <img src="/assets/images/service-materials.png" alt="Best quality construction materials" width="426" height="283" loading="lazy">
+                        </div>
+                        <div class="treatment-content">
+                            <div class="treatment-label">Quality</div>
+                            <h3 class="brand-serif">Best Quality in Materials</h3>
+                            <p>We care about the details.</p>
+                        </div>
+                    </article>
+                    <article class="card-treatment">
+                        <div class="card-treatment-media">
+                            <img src="/assets/images/service-details.png" alt="Kitchen remodeling supervised by Anderhaus Construction" width="426" height="283" loading="lazy">
+                        </div>
+                        <div class="treatment-content">
+                            <div class="treatment-label">Supervision</div>
+                            <h3 class="brand-serif">We Supervise Every Detail</h3>
+                            <p>From roof to kitchen and bathroom — our team oversees each phase of your build or remodel.</p>
+                        </div>
+                    </article>
+                </div>
+
                 <ul class="services-sr-list" aria-label="Services offered">
                     <li>Kitchen remodeling</li>
                     <li>Bathroom remodeling</li>
@@ -525,7 +602,7 @@
                         <li>We have a solid network of resources in the industry.</li>
                     </ul>
                 </div>
-                <img class="about-image" src="/assets/images/about-team.jpg" alt="Anderhaus Construction residential project in north Houston" width="800" height="534" loading="lazy">
+                <img class="about-image" src="/assets/images/service-new-home.png" alt="Anderhaus Construction custom home exterior in north Houston" width="426" height="283" loading="lazy">
             </div>
         </section>
 
