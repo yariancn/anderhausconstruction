@@ -29,7 +29,7 @@
 
     <link rel="alternate" type="text/plain" href="/llms.txt" title="Site information for AI systems">
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
-    <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
     <link rel="sitemap" type="application/xml" href="/sitemap.xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +54,7 @@
           "name": "Anderhaus Construction LLC",
           "alternateName": "Anderhaus Construction",
           "url": "https://anderhausconstruction.com/",
-          "logo": "https://anderhausconstruction.com/assets/images/logo.jpg",
+          "logo": "https://anderhausconstruction.com/assets/images/favicon.png",
           "image": [
             "https://anderhausconstruction.com/assets/images/about-team.jpg",
             "https://anderhausconstruction.com/assets/images/service-new-home.png"
@@ -95,6 +95,9 @@
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "New single-family home construction" } },
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kitchen remodeling" } },
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bathroom remodeling" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Flooring installation" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Make-ready services" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Residential improvements" } },
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Roofing" } },
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Whole-home remodeling" } },
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Land selection and housing development" } }
@@ -253,44 +256,48 @@
         .about-text p { font-size: 1.05rem; line-height: 1.75; margin: 0 0 20px; }
         .about-image { width: 100%; border-radius: 6px; display: block; box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
         .logo-banner { display: block; max-width: 280px; margin: 0 auto 28px; width: 100%; height: auto; }
-        .services-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 20px;
+        .services-banner-wrap {
+            margin: 0 auto;
+            max-width: 1100px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 6px 28px rgba(0,0,0,0.12);
+            background: var(--cream);
         }
-        .service-card {
-            background: var(--cream); border-radius: 6px; overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.12); transition: transform 0.2s;
-            border: 1px solid rgba(48,48,48,0.08);
-        }
-        .service-card:hover { transform: translateY(-4px); }
-        .service-card-media {
-            background: var(--charcoal);
-            padding: 20px 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 230px;
-        }
-        .service-card img {
+        .services-banner-wrap img {
             width: 100%;
             height: auto;
-            max-height: 190px;
-            object-fit: contain;
             display: block;
         }
-        .service-card-body { padding: 24px; color: var(--charcoal); }
-        .service-label {
-            font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 1.5px; color: var(--accent); margin-bottom: 6px;
+        .services-sr-list {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
-        .service-card h3 { margin: 0 0 8px; font-size: 1.15rem; }
-        .service-card p { margin: 0; font-size: 0.92rem; line-height: 1.55; }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
         .why-grid {
             display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
         }
         .why-list { list-style: none; padding: 0; margin: 24px 0 0; }
         .why-list li {
             padding: 14px 0 14px 28px; position: relative;
-            border-bottom: 1px solid rgba(248,246,241,0.12); font-size: 1.05rem;
+            border-bottom: 1px solid rgba(48,48,48,0.12); font-size: 1.05rem;
         }
         .why-list li::before {
             content: ''; position: absolute; left: 0; top: 22px;
@@ -361,7 +368,7 @@
         .phone-floating:hover { transform: scale(1.08); background-color: var(--accent-hover); }
         .phone-floating svg { width: 28px; height: 28px; fill: currentColor; }
         @media (max-width: 900px) {
-            .split-contact, .about-grid, .why-grid, .services-grid, .footer-columns { grid-template-columns: 1fr; }
+            .split-contact, .about-grid, .why-grid, .footer-columns { grid-template-columns: 1fr; }
             .split-panel.right { border-left: none; border-top: 1px solid rgba(248,246,241,0.15); }
             body { padding-top: 110px; }
             .nav-menu { width: 100%; justify-content: center; }
@@ -447,42 +454,22 @@
             </div>
         </section>
 
-        <section id="services" class="section-dark">
+        <section id="services" class="section-cream">
             <div class="container">
-                <h2 class="section-title brand-serif">Our Services</h2>
-                <p class="section-subtitle">New single-family homes, remodeling, roofing, and whole-home projects across north Houston</p>
-                <div class="services-grid">
-                    <article class="service-card">
-                        <div class="service-card-media">
-                            <img src="/assets/images/service-new-home.png" alt="New modern family home built by Anderhaus Construction in north Houston" width="426" height="283" loading="lazy">
-                        </div>
-                        <div class="service-card-body">
-                            <div class="service-label">New</div>
-                            <h3 class="brand-serif">Modern Family Home</h3>
-                            <p>Built just for your family — thoughtfully designed single-family homes on selected land or your existing lot.</p>
-                        </div>
-                    </article>
-                    <article class="service-card">
-                        <div class="service-card-media">
-                            <img src="/assets/images/service-materials.png" alt="Quality construction materials for home builds in Magnolia and Conroe" width="426" height="283" loading="lazy">
-                        </div>
-                        <div class="service-card-body">
-                            <div class="service-label">Quality</div>
-                            <h3 class="brand-serif">Best Quality in Materials</h3>
-                            <p>We care about the details and use trusted materials for lasting results in every project.</p>
-                        </div>
-                    </article>
-                    <article class="service-card">
-                        <div class="service-card-media">
-                            <img src="/assets/images/service-details.png" alt="Kitchen and bathroom remodeling supervised by Anderhaus Construction" width="426" height="283" loading="lazy">
-                        </div>
-                        <div class="service-card-body">
-                            <div class="service-label">Supervision</div>
-                            <h3 class="brand-serif">We Supervise Every Detail</h3>
-                            <p>From roofing to kitchen and bathroom — our team oversees each phase of your build or remodel.</p>
-                        </div>
-                    </article>
-                </div>
+                <h2 class="sr-only">Our Services</h2>
+                <p class="section-subtitle" style="color:var(--charcoal);opacity:0.85;margin-bottom:28px;">Kitchen and bathroom remodeling, flooring, make-ready services, residential improvements, and new home construction</p>
+                <figure class="services-banner-wrap">
+                    <img src="/assets/images/our-services-banner.png" alt="Anderhaus Construction services: Kitchen Remodeling, Bathroom Remodeling, Flooring Installation, Make-Ready Services, and Residential Improvements" width="1024" height="242" loading="lazy">
+                </figure>
+                <ul class="services-sr-list" aria-label="Services offered">
+                    <li>Kitchen remodeling</li>
+                    <li>Bathroom remodeling</li>
+                    <li>Flooring installation</li>
+                    <li>Make-ready services</li>
+                    <li>Residential improvements</li>
+                    <li>New single-family home construction</li>
+                    <li>Roofing and whole-home remodeling</li>
+                </ul>
             </div>
         </section>
 
@@ -492,6 +479,7 @@
                     <h2 class="section-title brand-serif" style="text-align:left;margin-bottom:16px;">Why Choose Us?</h2>
                     <p>We are a housing development and remodeling company in the north of Houston. We locate, select land, and build single-family homes. We can build on your existing lot or remodel your roof, bathroom, kitchen, or complete home.</p>
                     <ul class="why-list" style="color:var(--charcoal);">
+                        <li>Years of experience building and remodeling.</li>
                         <li>We have a dedicated team with the expertise and skills.</li>
                         <li>We have a solid network of resources in the industry.</li>
                     </ul>
