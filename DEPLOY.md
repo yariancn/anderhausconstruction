@@ -1,68 +1,50 @@
-# Anderhaus Construction — Deploy y SEO
+# Anderhaus Construction — Deploy y DNS
 
-## Cloudflare Pages
+## Sitio nuevo (Cloudflare Workers)
 
-1. https://dash.cloudflare.com → Workers & Pages → **Create application** → Connect to Git
-2. Repo: **yariancn/anderhausconstruction** (crear en GitHub primero), branch **main**
-3. Build command: *(vacío)* | Output directory: **/**
-4. Custom domains: `anderhausconstruction.com` y `www.anderhausconstruction.com`
+- Preview: `https://anderhausconstruction.yarianc.workers.dev`
+- Repo: `github.com/yariancn/anderhausconstruction`
 
 ---
 
-## Migración desde Canva
+## IMPORTANTE: conectar el dominio (paso pendiente)
 
-El sitio actual (`anderhausconstruction.com`) está alojado en **Canva Websites**, igual que OXYGENGDL antes de la migración.
+Hoy `anderhausconstruction.com` **sigue mostrando el sitio viejo de Canva**. Por eso no ves el favicon nuevo ni el banner de Our Services.
 
-| Paso | Acción |
-|------|--------|
-| 1 | Subir este repo a GitHub y conectar Cloudflare Pages |
-| 2 | Verificar preview en `*.pages.dev` |
-| 3 | En Cloudflare DNS del dominio, apuntar `anderhausconstruction.com` a Pages (CNAME o registro automático) |
-| 4 | Desconectar dominio en Canva (o dejar de renovar el plan de sitio web) |
-| 5 | Configurar redirect `www` → raíz en Cloudflare Pages |
+### Pasos en Cloudflare Dashboard
+
+1. https://dash.cloudflare.com → dominio **anderhausconstruction.com**
+2. **Workers & Pages** → worker **anderhausconstruction**
+3. **Settings** → **Domains & Routes** → **Add** → `anderhausconstruction.com`
+4. Repetir para `www.anderhausconstruction.com` (redirect a raíz si lo ofrece)
+5. **DNS** → revisar que no quede un registro apuntando a Canva:
+   - Eliminar CNAME/A de Canva si existe
+   - El dominio custom del Worker crea los registros necesarios
+6. En **Canva** → desconectar `anderhausconstruction.com` del sitio publicado
+
+### Cómo verificar que ya funciona
+
+```bash
+curl -sI https://anderhausconstruction.com | head -5
+```
+
+Debe responder el sitio estático (no HTML de Canva con `__canva_website_bootstrap__`).
 
 ---
 
 ## Google Search Console
 
-1. https://search.google.com/search-console → **Agregar propiedad** → `https://anderhausconstruction.com`
-2. Verificar por **registro DNS TXT** en Cloudflare (mismo método que OXYGENGDL)
+1. https://search.google.com/search-console → propiedad `https://anderhausconstruction.com`
+2. Verificar por DNS TXT en Cloudflare
 3. Enviar sitemap: `sitemap.xml`
-4. Inspección de URLs → solicitar indexación de `https://anderhausconstruction.com/`
+4. Solicitar indexación de la página principal
 
 ---
 
-## Google Business Profile
+## Checklist
 
-Si existe ficha de negocio, actualizar:
-
-- **Sitio web** → `https://anderhausconstruction.com`
-- **Dirección** → 256 Ed English Dr, Bldg 4 Ste E, Shenandoah, TX 77385
-- **Teléfono** → (713) 591-3379
-
----
-
-## Checklist técnico del sitio
-
-- [x] HTML estático optimizado (sin Canva JS)
-- [x] Canonical `https://anderhausconstruction.com/`
-- [x] `robots.txt` + `sitemap.xml`
-- [x] Schema.org (HomeAndConstructionBusiness, FAQ)
-- [x] Open Graph + geo tags
-- [x] `llms.txt`
-- [x] `_headers` de seguridad y caché
-- [x] Video hero + imágenes en `/assets/`
-- [ ] Repo en GitHub + Cloudflare Pages ← **pendiente**
-- [ ] DNS apuntando a Pages ← **pendiente**
-- [ ] Search Console verificado ← **pendiente**
-- [ ] Dominio desconectado de Canva ← **pendiente**
-
----
-
-## Tiempo estimado
-
-| Fase | Tiempo |
-|------|--------|
-| Deploy en Pages + DNS | Mismo día |
-| Primera indexación | 3–14 días |
-| Consolidación en resultados | 2–6 semanas |
+- [x] Sitio estático en GitHub + Workers
+- [x] Favicon, Our Services banner, SEO, llms.txt
+- [ ] Dominio `anderhausconstruction.com` → Worker (no Canva) ← **hacer ahora**
+- [ ] Canva desconectado del dominio
+- [ ] Search Console + sitemap
