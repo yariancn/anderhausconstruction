@@ -19,6 +19,13 @@
 .AppleDouble
 ._*
 
+# Wrangler / deploy
+.wrangler/
+.dev.vars
+
+# Git (never publish)
+.git/
+
 # Editor
 *.swp
 *~
