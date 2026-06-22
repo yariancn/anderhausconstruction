@@ -172,7 +172,6 @@
         .nav-brand-group {
             display: flex;
             align-items: center;
-            gap: 14px;
             flex: 1 1 auto;
             min-width: 0;
         }
@@ -180,25 +179,15 @@
             display: block;
             flex-shrink: 1;
             min-width: 0;
-            max-width: 300px;
+            max-width: 450px;
             text-decoration: none;
             transition: opacity 0.2s;
         }
         .nav-services-link:hover { opacity: 0.85; }
         .nav-services-link img {
-            height: 46px;
+            height: 69px;
             width: auto;
             max-width: 100%;
-            display: block;
-        }
-        .logo-nav a {
-            display: block;
-            text-decoration: none;
-            flex-shrink: 0;
-        }
-        .logo-nav img {
-            max-height: 56px;
-            width: auto;
             display: block;
         }
         .nav-menu { list-style: none; display: flex; margin: 0; padding: 0; gap: 20px; flex-wrap: wrap; }
@@ -223,8 +212,21 @@
             background: linear-gradient(180deg, rgba(48,48,48,0.55) 0%, rgba(48,48,48,0.82) 100%);
         }
         .hero-inner {
-            position: relative; z-index: 1; width: 100%; max-width: 900px;
+            position: relative; z-index: 1; width: 100%; max-width: 1200px;
             margin: 0 auto; padding: 0 24px; text-align: center;
+        }
+        .hero-logo-link {
+            display: block;
+            width: clamp(33vw, 38%, 520px);
+            min-width: min(100%, 280px);
+            margin: 0 auto 28px;
+            text-decoration: none;
+        }
+        .hero-logo-link img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 4px 18px rgba(0,0,0,0.35));
         }
         .hero h1 {
             font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 16px;
@@ -402,12 +404,11 @@
         @media (max-width: 900px) {
             .split-contact, .about-grid, .why-grid, .footer-columns { grid-template-columns: 1fr; }
             .split-panel.right { border-left: none; border-top: 1px solid rgba(248,246,241,0.15); }
-            body { padding-top: 118px; }
+            body { padding-top: 100px; }
             .nav-container { row-gap: 12px; }
             .nav-brand-group { flex: 1 1 100%; justify-content: flex-start; }
-            .nav-services-link { max-width: 220px; }
-            .nav-services-link img { height: 38px; }
-            .logo-nav img { max-height: 48px; }
+            .nav-services-link { max-width: 330px; }
+            .nav-services-link img { height: 57px; }
             .nav-menu { width: 100%; justify-content: center; }
         }
         @media (max-width: 768px) {
@@ -425,13 +426,8 @@
             <div class="nav-container">
                 <div class="nav-brand-group">
                     <a href="#services" class="nav-services-link" aria-label="Our Services — kitchen, bathroom, flooring, make-ready, residential improvements, new home construction">
-                        <img src="/assets/images/our-services-banner.png" alt="Our Services" width="300" height="71" loading="eager">
+                        <img src="/assets/images/our-services-banner.png" alt="Our Services" width="450" height="106" loading="eager">
                     </a>
-                    <div class="logo-nav">
-                        <a href="#home" aria-label="Anderhaus Construction home">
-                            <img src="/assets/images/logo.jpg" alt="Anderhaus Construction" width="200" height="56">
-                        </a>
-                    </div>
                 </div>
                 <ul class="nav-menu">
                     <li><a class="nav-link" href="#home">Home</a></li>
@@ -453,6 +449,9 @@
                 <div class="hero-overlay"></div>
             </div>
             <div class="hero-inner">
+                <a href="#home" class="hero-logo-link" aria-label="Anderhaus Construction">
+                    <img src="/assets/images/logo.jpg" alt="Anderhaus Construction" width="520" height="146" loading="eager">
+                </a>
                 <h1>Building a Home for You</h1>
                 <p class="hero-tagline">North Houston · The Woodlands · Magnolia · Conroe &amp; Greater Houston</p>
                 <div class="hero-buttons">
@@ -483,7 +482,6 @@
 
         <section id="about" class="section-cream">
             <div class="container">
-                <img class="logo-banner" src="/assets/images/logo.jpg" alt="" width="280" height="178" aria-hidden="true" loading="lazy">
                 <h2 class="section-title brand-serif">Who We Are</h2>
                 <p class="section-subtitle brand-serif">We build homes or make your home a better place</p>
                 <div class="about-grid">
