@@ -1,7 +1,7 @@
 # Anderhaus Construction LLC
 
 > Custom home builder and remodeling company in Greater Houston, Texas.
-> Housing development and single-family home construction in north Houston.
+> Housing development and single-family home construction from north Houston to Magnolia and Conroe.
 > Address: 256 Ed English Dr, Bldg 4 Ste E, Shenandoah, TX 77385
 > Phone: +1 (713) 591-3379
 > Email: hello@anderhouseconstruction.com
@@ -10,14 +10,29 @@
 ## Services
 - New single-family home construction
 - Land selection and housing development
-- Kitchen and bathroom remodeling
-- Roof and whole-home remodeling
+- Kitchen remodeling
+- Bathroom remodeling
+- Roofing
+- Whole-home remodeling
 - Builds on client-owned lots
 
-## Service area
-- Greater Houston
+## Service area (geographic coverage)
 - North Houston
-- Shenandoah, The Woodlands, and surrounding communities
+- Shenandoah, TX
+- The Woodlands, TX
+- Spring, TX
+- Tomball, TX
+- Magnolia, TX
+- Conroe, TX
+- Greater Houston metropolitan area
+- Montgomery County, Texas
+- Harris County, Texas
+
+## Common questions
+- Q: What areas does Anderhaus Construction serve?
+  A: North Houston, Shenandoah, The Woodlands, Spring, Tomball, Magnolia, Conroe, and greater Houston.
+- Q: Do you build new homes and remodel existing ones?
+  A: Yes — new single-family homes, remodeling, from easy bathroom or kitchen, roofing to whole-home remodeling.
 
 ## Contact
 - Phone: tel:+17135913379
