@@ -1,0 +1,24 @@
+# Never upload large source files to the website repo
+*.mov
+*.MOV
+*.avi
+*.mkv
+*.dmg
+*.zip
+*.7z
+*.rar
+*.pdf
+*.ai
+*.tif
+*.tiff
+*.psd
+*.exe
+
+# macOS
+.DS_Store
+.AppleDouble
+._*
+
+# Editor
+*.swp
+*~
