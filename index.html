@@ -170,26 +170,8 @@
             display: flex; justify-content: space-between; align-items: center;
             flex-wrap: wrap; gap: 10px; max-width: 1200px; margin: 0 auto; padding: 0 20px;
         }
-        .nav-brand-group {
-            display: flex;
-            align-items: center;
-            flex: 1 1 auto;
-            min-width: 0;
-        }
-        .nav-services-link {
-            display: block;
-            flex-shrink: 1;
-            min-width: 0;
-            max-width: 450px;
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-        .nav-services-link:hover { opacity: 0.85; }
-        .nav-services-link img {
-            height: 69px;
-            width: auto;
-            max-width: 100%;
-            display: block;
+        @media (min-width: 769px) {
+            .nav-menu { margin-right: auto; }
         }
         .nav-menu { list-style: none; display: flex; margin: 0; padding: 0; gap: 20px; flex-wrap: wrap; }
         .nav-link { text-decoration: none; color: var(--charcoal); font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
@@ -287,13 +269,6 @@
         }
         .about-centered { max-width: 860px; margin: 0 auto; text-align: center; }
         .about-centered .about-text p { text-align: center; }
-        .logo-banner-wide {
-            display: block;
-            max-width: 420px;
-            width: 100%;
-            margin: 0 auto 28px;
-            height: auto;
-        }
         .why-logo {
             display: block;
             max-width: 160px;
@@ -469,11 +444,8 @@
         @media (max-width: 900px) {
             .split-contact, .about-grid, .why-grid, .grid-treatments, .footer-columns { grid-template-columns: 1fr; }
             .split-panel.right { border-left: none; border-top: 1px solid rgba(248,246,241,0.15); }
-            body { padding-top: 100px; }
+            body { padding-top: 88px; }
             .nav-container { row-gap: 12px; }
-            .nav-brand-group { flex: 1 1 100%; justify-content: flex-start; }
-            .nav-services-link { max-width: 330px; }
-            .nav-services-link img { height: 57px; }
             .nav-menu { width: 100%; justify-content: center; }
         }
         @media (max-width: 768px) {
@@ -489,11 +461,6 @@
     <header class="site-header">
         <nav aria-label="Main navigation">
             <div class="nav-container">
-                <div class="nav-brand-group">
-                    <a href="#services" class="nav-services-link" aria-label="Our Services — kitchen, bathroom, flooring, make-ready, residential improvements, new home construction">
-                        <img src="/assets/images/our-services.png" alt="Our Services" width="450" height="106" loading="eager">
-                    </a>
-                </div>
                 <ul class="nav-menu">
                     <li><a class="nav-link" href="#home">Home</a></li>
                     <li><a class="nav-link" href="#about">Who We Are</a></li>
@@ -548,7 +515,6 @@
         <section id="about" class="section-cream">
             <div class="container about-centered">
                 <img class="logo-banner" src="/assets/images/logo.jpg" alt="Anderhaus Construction" width="200" height="127" loading="lazy">
-                <img class="logo-banner-wide" src="/assets/images/logo-banner.jpg" alt="" width="420" height="100" aria-hidden="true" loading="lazy">
                 <h2 class="section-title brand-serif">Who We Are</h2>
                 <div class="about-text">
                     <p>Where love resides and memories are created. Each brick carefully laid, each room thoughtfully designed, each corner filled with warmth and comfort. Our homes are more than just walls and a roof; they are havens of peace, shelters from the storm, and the foundation of our lives. In these spaces, laughter echoes, tears are wiped away, and dreams take flight. We build homes where families grow, friendships deepen, and love blossoms. Each home we create is a reflection of the beauty and joy that dwell within us, a sanctuary where we can truly be ourselves. Together, we build not just structures, but sanctuaries of the heart.</p>
