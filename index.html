@@ -169,25 +169,37 @@
             display: flex; justify-content: space-between; align-items: center;
             flex-wrap: wrap; gap: 10px; max-width: 1200px; margin: 0 auto; padding: 0 20px;
         }
-        .logo-nav a {
-            display: inline-flex;
+        .nav-brand-group {
+            display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+        .nav-services-link {
+            display: block;
+            flex-shrink: 1;
+            min-width: 0;
+            max-width: 300px;
             text-decoration: none;
-            color: var(--charcoal);
+            transition: opacity 0.2s;
         }
-        .logo-nav img { max-height: 52px; width: auto; display: block; flex-shrink: 0; }
-        .logo-nav-text {
-            font-family: 'Libre Baskerville', Georgia, serif;
-            font-weight: 700;
-            font-size: 1rem;
-            line-height: 1.2;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+        .nav-services-link:hover { opacity: 0.85; }
+        .nav-services-link img {
+            height: 46px;
+            width: auto;
+            max-width: 100%;
+            display: block;
         }
-        @media (max-width: 520px) {
-            .logo-nav-text { font-size: 0.82rem; max-width: 140px; }
-            .logo-nav img { max-height: 44px; }
+        .logo-nav a {
+            display: block;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+        .logo-nav img {
+            max-height: 56px;
+            width: auto;
+            display: block;
         }
         .nav-menu { list-style: none; display: flex; margin: 0; padding: 0; gap: 20px; flex-wrap: wrap; }
         .nav-link { text-decoration: none; color: var(--charcoal); font-weight: 600; font-size: 0.95rem; transition: color 0.2s; }
@@ -232,24 +244,6 @@
         .cta-primary:hover { background-color: #fff; transform: translateY(-1px); }
         .cta-secondary { background-color: transparent; color: var(--cream); border: 2px solid var(--cream); }
         .cta-secondary:hover { background-color: rgba(248,246,241,0.12); }
-        .services-preview-link {
-            display: block;
-            margin: 0;
-            padding: 0;
-            background: var(--cream);
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-        .services-preview-link:hover { opacity: 0.92; }
-        .services-preview-link img {
-            width: 100%;
-            max-width: 1100px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            padding: 20px 20px 28px;
-            box-sizing: border-box;
-        }
         .strip-banner {
             background-color: var(--cream); color: var(--charcoal);
             text-align: center; padding: 22px 20px;
@@ -408,7 +402,12 @@
         @media (max-width: 900px) {
             .split-contact, .about-grid, .why-grid, .footer-columns { grid-template-columns: 1fr; }
             .split-panel.right { border-left: none; border-top: 1px solid rgba(248,246,241,0.15); }
-            body { padding-top: 110px; }
+            body { padding-top: 118px; }
+            .nav-container { row-gap: 12px; }
+            .nav-brand-group { flex: 1 1 100%; justify-content: flex-start; }
+            .nav-services-link { max-width: 220px; }
+            .nav-services-link img { height: 38px; }
+            .logo-nav img { max-height: 48px; }
             .nav-menu { width: 100%; justify-content: center; }
         }
         @media (max-width: 768px) {
@@ -424,11 +423,15 @@
     <header class="site-header">
         <nav aria-label="Main navigation">
             <div class="nav-container">
-                <div class="logo-nav">
-                    <a href="#home" aria-label="Anderhaus Construction home">
-                        <img src="/assets/images/logo-roof.png" alt="" width="52" height="52" aria-hidden="true">
-                        <span class="logo-nav-text">Anderhaus Construction</span>
+                <div class="nav-brand-group">
+                    <a href="#services" class="nav-services-link" aria-label="Our Services — kitchen, bathroom, flooring, make-ready, residential improvements, new home construction">
+                        <img src="/assets/images/our-services-banner.png" alt="Our Services" width="300" height="71" loading="eager">
                     </a>
+                    <div class="logo-nav">
+                        <a href="#home" aria-label="Anderhaus Construction home">
+                            <img src="/assets/images/logo.jpg" alt="Anderhaus Construction" width="200" height="56">
+                        </a>
+                    </div>
                 </div>
                 <ul class="nav-menu">
                     <li><a class="nav-link" href="#home">Home</a></li>
@@ -460,10 +463,6 @@
         </section>
 
         <div class="strip-banner">Building or remodeling your home</div>
-
-        <a href="#services" class="services-preview-link" aria-label="View our services — kitchen, bathroom, flooring, make-ready, and residential improvements">
-            <img src="/assets/images/our-services-banner.png" alt="Our Services: Kitchen Remodeling, Bathroom Remodeling, Flooring Installation, Make-Ready Services, Residential Improvements, New Home Construction" width="1024" height="242" loading="eager">
-        </a>
 
         <section class="split-contact" id="contact">
             <div class="split-panel">
@@ -502,7 +501,7 @@
                 <h2 class="section-title brand-serif" style="color:var(--charcoal);">Our Services</h2>
                 <p class="section-subtitle" style="color:var(--charcoal);opacity:0.85;margin-bottom:28px;">Kitchen and bathroom remodeling, flooring, make-ready services, residential improvements, and new home construction</p>
                 <figure class="services-banner-wrap">
-                    <img src="/assets/images/our-services-banner.png" alt="" width="1024" height="242" loading="lazy" aria-hidden="true">
+                    <img src="/assets/images/our-services-banner.png" alt="Our Services: Kitchen Remodeling, Bathroom Remodeling, Flooring Installation, Make-Ready Services, Residential Improvements, New Home Construction" width="1024" height="242" loading="lazy">
                 </figure>
                 <ul class="services-sr-list" aria-label="Services offered">
                     <li>Kitchen remodeling</li>
